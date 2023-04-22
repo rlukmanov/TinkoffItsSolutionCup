@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  UIImage+extensions.swift
+//
 //
 //  Created by Ruslan Lukmanov on 22.04.2023.
 //

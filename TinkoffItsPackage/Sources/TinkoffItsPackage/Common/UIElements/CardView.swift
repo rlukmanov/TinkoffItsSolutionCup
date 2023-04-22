@@ -83,7 +83,9 @@ public class CardView: UIView {
     private var titleLabel: UILabel!
     private var subtitleLabel: UILabel!
     private var bottomButton: TinkoffItsButton!
+    private var leadingImageContainerView: UIView!
     private var leadingImageView: UIImageView!
+    private var trailingImageContainerView: UIView!
     private var trailingImageView: UIImageView!
     
     private var viewModel: CardViewModel?
@@ -156,17 +158,38 @@ public class CardView: UIView {
     }
     
     private func configureLeadingImageView() {
+        leadingImageContainerView = UIView()
+        leadingImageContainerView.backgroundColor = .clear
+        
         leadingImageView = UIImageView(image: .Common.avatarIcon).prepareForAutoLayout()
         leadingImageView.setContentHuggingPriority(.required, for: .horizontal)
         leadingImageView.setContentCompressionResistancePriority(.required, for: .horizontal)
-        horizontalStackView.addArrangedSubview(leadingImageView)
+        
+        leadingImageContainerView.addSubview(leadingImageView)
+        leadingImageView.topAnchor >= leadingImageContainerView.topAnchor
+        leadingImageView.bottomAnchor <= leadingImageContainerView.bottomAnchor
+        leadingImageView.centerYAnchor ~= leadingImageContainerView.centerYAnchor
+        leadingImageView.leftAnchor >= leadingImageContainerView.leftAnchor
+        leadingImageView.rightAnchor ~= leadingImageContainerView.rightAnchor
+        
+        horizontalStackView.addArrangedSubview(leadingImageContainerView)
     }
     
     private func configureTrailingImageView() {
+        trailingImageContainerView = UIView()
+        trailingImageContainerView.backgroundColor = .clear
         trailingImageView = UIImageView(image: .Common.avatarIcon).prepareForAutoLayout()
         trailingImageView.setContentHuggingPriority(.required, for: .horizontal)
         trailingImageView.setContentCompressionResistancePriority(.required, for: .horizontal)
-        horizontalStackView.addArrangedSubview(trailingImageView)
+        
+        trailingImageContainerView.addSubview(trailingImageView)
+        trailingImageView.topAnchor >= trailingImageContainerView.topAnchor
+        trailingImageView.bottomAnchor <= trailingImageContainerView.bottomAnchor
+        trailingImageView.centerYAnchor ~= trailingImageContainerView.centerYAnchor
+        trailingImageView.leftAnchor ~= trailingImageContainerView.leftAnchor
+        trailingImageView.rightAnchor <= trailingImageContainerView.rightAnchor
+        
+        horizontalStackView.addArrangedSubview(trailingImageContainerView)
     }
     
     //MARK: Public methods
@@ -187,18 +210,18 @@ public class CardView: UIView {
         if let imageSide = viewModel.imageSide {
             switch imageSide {
             case .left:
-                leadingImageView.isHidden = false
-                trailingImageView.isHidden = true
+                leadingImageContainerView.isHidden = false
+                trailingImageContainerView.isHidden = true
             case .right:
-                leadingImageView.isHidden = true
-                trailingImageView.isHidden = false
+                leadingImageContainerView.isHidden = true
+                trailingImageContainerView.isHidden = false
             case .none:
-                leadingImageView.isHidden = true
-                trailingImageView.isHidden = true
+                leadingImageContainerView.isHidden = true
+                trailingImageContainerView.isHidden = true
             }
         } else {
-            leadingImageView.isHidden = true
-            trailingImageView.isHidden = true
+            leadingImageContainerView.isHidden = true
+            trailingImageContainerView.isHidden = true
         }
     }
 }
