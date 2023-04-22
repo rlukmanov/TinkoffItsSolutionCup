@@ -128,6 +128,7 @@ final public class ListView: UIView {
         }
         bottomButton.isHidden = viewModel.bottomButton == nil
         
+        setNeedsLayout()
         layoutIfNeeded()
     }
 }

@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
     
     private var listItemModel: CardViewModel {
-        CardViewModel(title: Texts.defaultHeader, subtitle: Texts.defaultSubtitle, imageSide: .left)
+        CardViewModel(title: Texts.defaultHeader, subtitle: Texts.defaultSubtitle, imageSide: .left, insets: UIEdgeInsets(top: .zero, left: .zero, bottom: 20, right: .zero))
     }
     
     //MARK: UI Properies

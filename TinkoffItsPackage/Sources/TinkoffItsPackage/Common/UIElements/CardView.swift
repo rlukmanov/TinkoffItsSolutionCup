@@ -105,8 +105,7 @@ public class CardView: UIView {
     private func commonInit() {
         backgroundColor = .Background.primary
         layer.cornerRadius = UIConstants.cornerRadius
-        clipsToBounds = true
-        
+
         configureContentStackView()
         configureHorizontalStackView()
         configureTitlesStackView()
@@ -125,7 +124,11 @@ public class CardView: UIView {
         contentStackView.axis = .vertical
         contentStackView.spacing = UIConstants.contentStackViewSpacing
         addSubview(contentStackView)
-        contentStackView.pinEdgesToSuperviewEdges(top: UIConstants.defaultVerticalOffset, left: UIConstants.defaultLeftOffset, bottom: UIConstants.defaultVerticalOffset, right: UIConstants.defaultRightOffset)
+        if let insets = viewModel?.insets {
+            contentStackView.pinEdgesToSuperviewEdges(top: insets.top, left: insets.left, bottom: insets.bottom, right: insets.right)
+        } else {
+            contentStackView.pinEdgesToSuperviewEdges(top: UIConstants.defaultVerticalOffset, left: UIConstants.defaultLeftOffset, bottom: UIConstants.defaultVerticalOffset, right: UIConstants.defaultRightOffset)
+        }
     }
     
     private func configureHorizontalStackView() {
