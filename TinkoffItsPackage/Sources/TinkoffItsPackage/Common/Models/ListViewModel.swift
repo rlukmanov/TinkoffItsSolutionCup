@@ -25,7 +25,7 @@ public struct ListViewModel {
     let elements: [CardViewModel]
     let bottomButton: ButtonModel?
     
-    public init(title: String?, trailngButton: ButtonModel?, elements: [CardViewModel], bottomButton: ButtonModel?) {
+    public init(title: String?, trailngButton: ButtonModel?, elements: [CardViewModel], bottomButton: ButtonModel? = nil) {
         self.title = title
         self.trailngButton = trailngButton
         self.elements = elements

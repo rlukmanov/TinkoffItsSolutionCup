@@ -77,8 +77,7 @@ final public class ListView: UIView {
     private func configureTitleLabel() {
         titleLabel = .makeLabel(font: .systemFont(ofSize: 20, weight: .bold)).prepareForAutoLayout()
         topView.addSubview(titleLabel)
-        titleLabel.pinToSuperview([.left, .top])
-        titleLabel.bottomAnchor ~= topView.bottomAnchor - 20
+        titleLabel.pinToSuperview([.left, .bottom, .top])
     }
     
     private func configureTrailingButton() {
@@ -113,9 +112,12 @@ final public class ListView: UIView {
             trailingButton.addAction(trailingButtonVM.action, forControlEvents: .touchUpInside)
         }
         
-        for elements in viewModel.elements {
+        for (index, elements) in viewModel.elements.enumerated() {
             let view = CardView(viewModel: elements).prepareForAutoLayout()
             contentStackView.addArrangedSubview(view)
+            if index == viewModel.elements.count - 1, viewModel.bottomButton != nil {
+                contentStackView.setCustomSpacing(20, after: view)
+            }
         }
         
         configureBottomButton()

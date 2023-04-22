@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
     
     private var listItemModel: CardViewModel {
-        CardViewModel(title: Texts.defaultHeader, subtitle: Texts.defaultSubtitle, imageSide: .left, insets: UIEdgeInsets(top: .zero, left: .zero, bottom: 20, right: .zero))
+        CardViewModel(title: Texts.defaultHeader, subtitle: Texts.defaultSubtitle, imageSide: .left, insets: UIEdgeInsets(top: 20, left: .zero, bottom: .zero, right: .zero))
     }
     
     //MARK: UI Properies
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         return view
     }()
     
-    private lazy var listView: ListView = {
+    private lazy var listOneView: ListView = {
         let trailngButtonViewModel = ListViewModel.ButtonModel(title: Texts.buttonTitle, action: { _ in
             print("listViewTrailingTapped")
         })
@@ -59,6 +59,16 @@ class ViewController: UIViewController {
         })
         let elements: [CardViewModel] = [listItemModel, listItemModel, listItemModel]
         let viewModel = ListViewModel(title: Texts.defaultHeader, trailngButton: trailngButtonViewModel, elements: elements, bottomButton: bottomButtonViewModel)
+        let view = ListView(viewModel: viewModel).prepareForAutoLayout()
+        return view
+    }()
+    
+    private lazy var listTwoView: ListView = {
+        let trailngButtonViewModel = ListViewModel.ButtonModel(title: Texts.buttonTitle, action: { _ in
+            print("listViewTrailingTapped")
+        })
+        let elements: [CardViewModel] = [listItemModel, listItemModel, listItemModel, listItemModel, listItemModel]
+        let viewModel = ListViewModel(title: Texts.defaultHeader, trailngButton: trailngButtonViewModel, elements: elements)
         let view = ListView(viewModel: viewModel).prepareForAutoLayout()
         return view
     }()
@@ -92,7 +102,8 @@ class ViewController: UIViewController {
         contentStackView.addArrangedSubview(cardOneView)
         contentStackView.addArrangedSubview(cardTwoView)
         contentStackView.addArrangedSubview(cardThreeView)
-        contentStackView.addArrangedSubview(listView)
+        contentStackView.addArrangedSubview(listOneView)
+        contentStackView.addArrangedSubview(listTwoView)
         
         contentStackView.addArrangedSubview(strechView)
     }
