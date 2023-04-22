@@ -17,6 +17,10 @@ class ViewController: UIViewController {
         static let buttonTitle: String = "Button"
     }
     
+    private var listItemModel: CardViewModel {
+        CardViewModel(title: Texts.defaultHeader, subtitle: Texts.defaultSubtitle, imageSide: .right)
+    }
+    
     //MARK: UI Properies
     private var contentStackView: UIStackView = {
         let view = UIStackView().prepareForAutoLayout()
@@ -46,6 +50,19 @@ class ViewController: UIViewController {
         return view
     }()
     
+    private lazy var listView: ListView = {
+        let trailngButtonViewModel = ListViewModel.ButtonModel(title: Texts.buttonTitle, action: { _ in
+            print("listViewTrailingTapped")
+        })
+        let bottomButtonViewModel = ListViewModel.ButtonModel(title: Texts.buttonTitle, action: { _ in
+            print("listViewBottomTapped")
+        })
+        let elements: [CardViewModel] = [listItemModel, listItemModel, listItemModel]
+        let viewModel = ListViewModel(title: Texts.defaultHeader, trailngButton: trailngButtonViewModel, elements: elements, bottomButton: bottomButtonViewModel)
+        let view = ListView(viewModel: viewModel).prepareForAutoLayout()
+        return view
+    }()
+    
     private lazy var strechView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -67,6 +84,7 @@ class ViewController: UIViewController {
         contentStackView.addArrangedSubview(cardOneView)
         contentStackView.addArrangedSubview(cardTwoView)
         contentStackView.addArrangedSubview(cardThreeView)
+        contentStackView.addArrangedSubview(listView)
         
         contentStackView.addArrangedSubview(strechView)
     }

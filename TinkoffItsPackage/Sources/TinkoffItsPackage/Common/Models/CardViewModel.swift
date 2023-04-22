@@ -7,10 +7,10 @@
 
 import UIKit
 
+public typealias Action = (UIControl) -> ()
+
 //MARK: - CardViewModel
 public struct CardViewModel {
-    
-    public typealias Action = (UIControl) -> ()
     
     public struct BottomButtonModel {
         let title: String?
