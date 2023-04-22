@@ -55,10 +55,6 @@ final public class ListView: UIView {
         clipsToBounds = true
         
         configureContentStackView()
-        configureTopView()
-        configureTitleLabel()
-        configureTrailingButton()
-        configureBottomButton()
         
         updateViewModel(viewModel: viewModel)
     }
@@ -105,6 +101,10 @@ final public class ListView: UIView {
         }
         guard let viewModel = viewModel else { return }
         
+        configureTopView()
+        configureTitleLabel()
+        configureTrailingButton()
+        
         titleLabel.text = viewModel.title
         trailingButton.setTitle(viewModel.trailngButton?.title, for: .normal)
         if let trailingButtonVM = viewModel.trailngButton {
@@ -116,6 +116,7 @@ final public class ListView: UIView {
             contentStackView.addArrangedSubview(view)
         }
         
+        configureBottomButton()
         if let bottomButtonModel = viewModel.bottomButton {
             bottomButton.setTitle(bottomButtonModel.title, for: .normal)
             bottomButton.addAction(bottomButtonModel.action, forControlEvents: .touchUpInside)

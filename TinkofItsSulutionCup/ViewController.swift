@@ -63,6 +63,8 @@ class ViewController: UIViewController {
         return view
     }()
     
+    private lazy var scrollView = UIScrollView().prepareForAutoLayout()
+    
     private lazy var strechView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -75,11 +77,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(hex: "#f8d81c")
 
-        view.addSubview(contentStackView)
-        contentStackView.leftAnchor ~= view.leftAnchor + 16
-        contentStackView.rightAnchor ~= view.rightAnchor - 16
-        contentStackView.topAnchor ~= view.safeAreaLayoutGuide.topAnchor
-        contentStackView.bottomAnchor ~= view.safeAreaLayoutGuide.bottomAnchor
+        view.addSubview(scrollView)
+        scrollView.leftAnchor ~= view.leftAnchor + 16
+        scrollView.rightAnchor ~= view.rightAnchor - 16
+        scrollView.topAnchor ~= view.safeAreaLayoutGuide.topAnchor
+        scrollView.bottomAnchor ~= view.safeAreaLayoutGuide.bottomAnchor
+        scrollView.widthAnchor ~= view.widthAnchor - 32
+    
+        scrollView.addSubview(contentStackView)
+        scrollView.showsVerticalScrollIndicator = false
+        contentStackView.widthAnchor ~= scrollView.widthAnchor
+        contentStackView.pinEdgesToSuperviewEdges()
         
         contentStackView.addArrangedSubview(cardOneView)
         contentStackView.addArrangedSubview(cardTwoView)
