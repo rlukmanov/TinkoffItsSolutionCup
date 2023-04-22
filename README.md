@@ -1,2 +1,2 @@
-# solutionCup
+# TinkoffItsSolutionCup by Ruslan Lukmanov
 Description
