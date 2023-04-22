@@ -27,7 +27,7 @@ public extension UIColor {
     }
     
     struct Text {
-        /// #000000
+        /// #333333
         static var primary: UIColor { HEX.h333333 }
         /// #9299A2
         static var subhead: UIColor { HEX.h9299A2 }
