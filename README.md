@@ -1,2 +1,2 @@
 # TinkoffItsSolutionCup by Ruslan Lukmanov
-Description
+Решение было реализовано с помощью Swift package
