@@ -12,7 +12,7 @@ final public class ListView: UIView {
     
     struct UIConstants {
         static let cornerRadius: CGFloat = 24
-        static let contentStackViewSpacing: CGFloat = 20
+        static let contentStackViewSpacing: CGFloat = .zero
         static let defaultHorizontalOffset: CGFloat = 20
         static let defaultVerticalOffset: CGFloat = 16
     }
@@ -77,7 +77,8 @@ final public class ListView: UIView {
     private func configureTitleLabel() {
         titleLabel = .makeLabel(font: .systemFont(ofSize: 20, weight: .bold)).prepareForAutoLayout()
         topView.addSubview(titleLabel)
-        titleLabel.pinToSuperview([.left, .bottom, .top])
+        titleLabel.pinToSuperview([.left, .top])
+        titleLabel.bottomAnchor ~= topView.bottomAnchor - 20
     }
     
     private func configureTrailingButton() {
@@ -85,7 +86,8 @@ final public class ListView: UIView {
         trailingButton.setTitleColor(.Text.buttonMain, for: .normal)
         topView.addSubview(trailingButton)
         trailingButton.leftAnchor >= titleLabel.rightAnchor
-        trailingButton.pinToSuperview([.right, .top, .bottom])
+        trailingButton.rightAnchor ~= topView.rightAnchor
+        trailingButton.centerYAnchor ~= titleLabel.centerYAnchor
     }
     
     private func configureBottomButton() {
@@ -111,9 +113,12 @@ final public class ListView: UIView {
             trailingButton.addAction(trailingButtonVM.action, forControlEvents: .touchUpInside)
         }
         
-        for elements in viewModel.elements {
+        for (index, elements) in viewModel.elements.enumerated() {
             let view = CardView(viewModel: elements).prepareForAutoLayout()
             contentStackView.addArrangedSubview(view)
+            if index == viewModel.elements.count - 1 {
+                contentStackView.setCustomSpacing(20, after: view)
+            }
         }
         
         configureBottomButton()

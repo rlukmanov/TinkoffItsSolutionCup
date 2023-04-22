@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
     
     private var listItemModel: CardViewModel {
-        CardViewModel(title: Texts.defaultHeader, subtitle: Texts.defaultSubtitle, imageSide: .right)
+        CardViewModel(title: Texts.defaultHeader, subtitle: Texts.defaultSubtitle, imageSide: .left)
     }
     
     //MARK: UI Properies
