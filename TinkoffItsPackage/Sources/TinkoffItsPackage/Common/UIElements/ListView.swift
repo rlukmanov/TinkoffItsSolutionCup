@@ -113,12 +113,9 @@ final public class ListView: UIView {
             trailingButton.addAction(trailingButtonVM.action, forControlEvents: .touchUpInside)
         }
         
-        for (index, elements) in viewModel.elements.enumerated() {
+        for elements in viewModel.elements {
             let view = CardView(viewModel: elements).prepareForAutoLayout()
             contentStackView.addArrangedSubview(view)
-            if index == viewModel.elements.count - 1 {
-                contentStackView.setCustomSpacing(20, after: view)
-            }
         }
         
         configureBottomButton()
