@@ -10,20 +10,20 @@
 		E14BE74729F3DD400093E4D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14BE74629F3DD400093E4D4 /* AppDelegate.swift */; };
 		E14BE74929F3DD400093E4D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14BE74829F3DD400093E4D4 /* SceneDelegate.swift */; };
 		E14BE74B29F3DD400093E4D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14BE74A29F3DD400093E4D4 /* ViewController.swift */; };
-		E14BE74E29F3DD400093E4D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14BE74C29F3DD400093E4D4 /* Main.storyboard */; };
 		E14BE75029F3DD410093E4D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14BE74F29F3DD410093E4D4 /* Assets.xcassets */; };
 		E14BE75329F3DD410093E4D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14BE75129F3DD410093E4D4 /* LaunchScreen.storyboard */; };
+		E1A2B60129F3E1CC00AE6052 /* TinkoffItsPackage in Frameworks */ = {isa = PBXBuildFile; productRef = E1A2B60029F3E1CC00AE6052 /* TinkoffItsPackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E14BE74329F3DD400093E4D4 /* TinkofItsSulutionCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkofItsSulutionCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14BE74329F3DD400093E4D4 /* TinkoffItsSolutionCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffItsSolutionCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14BE74629F3DD400093E4D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E14BE74829F3DD400093E4D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E14BE74A29F3DD400093E4D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E14BE74D29F3DD400093E4D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E14BE74F29F3DD410093E4D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E14BE75229F3DD410093E4D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E14BE75429F3DD410093E4D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A2B5FE29F3E10600AE6052 /* TinkoffItsPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TinkoffItsPackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A2B60129F3E1CC00AE6052 /* TinkoffItsPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,15 +41,17 @@
 		E14BE73A29F3DD400093E4D4 = {
 			isa = PBXGroup;
 			children = (
+				E1A2B5FB29F3E04000AE6052 /* Packages */,
 				E14BE74529F3DD400093E4D4 /* TinkofItsSulutionCup */,
 				E14BE74429F3DD400093E4D4 /* Products */,
+				E1A2B5FF29F3E1BC00AE6052 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E14BE74429F3DD400093E4D4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E14BE74329F3DD400093E4D4 /* TinkofItsSulutionCup.app */,
+				E14BE74329F3DD400093E4D4 /* TinkoffItsSolutionCup.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,7 +62,6 @@
 				E14BE74629F3DD400093E4D4 /* AppDelegate.swift */,
 				E14BE74829F3DD400093E4D4 /* SceneDelegate.swift */,
 				E14BE74A29F3DD400093E4D4 /* ViewController.swift */,
-				E14BE74C29F3DD400093E4D4 /* Main.storyboard */,
 				E14BE74F29F3DD410093E4D4 /* Assets.xcassets */,
 				E14BE75129F3DD410093E4D4 /* LaunchScreen.storyboard */,
 				E14BE75429F3DD410093E4D4 /* Info.plist */,
@@ -67,12 +69,27 @@
 			path = TinkofItsSulutionCup;
 			sourceTree = "<group>";
 		};
+		E1A2B5FB29F3E04000AE6052 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				E1A2B5FE29F3E10600AE6052 /* TinkoffItsPackage */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		E1A2B5FF29F3E1BC00AE6052 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E14BE74229F3DD400093E4D4 /* TinkofItsSulutionCup */ = {
+		E14BE74229F3DD400093E4D4 /* TinkoffItsSolutionCup */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E14BE75729F3DD410093E4D4 /* Build configuration list for PBXNativeTarget "TinkofItsSulutionCup" */;
+			buildConfigurationList = E14BE75729F3DD410093E4D4 /* Build configuration list for PBXNativeTarget "TinkoffItsSolutionCup" */;
 			buildPhases = (
 				E14BE73F29F3DD400093E4D4 /* Sources */,
 				E14BE74029F3DD400093E4D4 /* Frameworks */,
@@ -82,9 +99,12 @@
 			);
 			dependencies = (
 			);
-			name = TinkofItsSulutionCup;
+			name = TinkoffItsSolutionCup;
+			packageProductDependencies = (
+				E1A2B60029F3E1CC00AE6052 /* TinkoffItsPackage */,
+			);
 			productName = TinkofItsSulutionCup;
-			productReference = E14BE74329F3DD400093E4D4 /* TinkofItsSulutionCup.app */;
+			productReference = E14BE74329F3DD400093E4D4 /* TinkoffItsSolutionCup.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E14BE73E29F3DD400093E4D4 /* Build configuration list for PBXProject "TinkofItsSulutionCup" */;
+			buildConfigurationList = E14BE73E29F3DD400093E4D4 /* Build configuration list for PBXProject "TinkoffItsSolutionCup" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E14BE74229F3DD400093E4D4 /* TinkofItsSulutionCup */,
+				E14BE74229F3DD400093E4D4 /* TinkoffItsSolutionCup */,
 			);
 		};
 /* End PBXProject section */
@@ -127,7 +147,6 @@
 			files = (
 				E14BE75329F3DD410093E4D4 /* LaunchScreen.storyboard in Resources */,
 				E14BE75029F3DD410093E4D4 /* Assets.xcassets in Resources */,
-				E14BE74E29F3DD400093E4D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +166,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E14BE74C29F3DD400093E4D4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E14BE74D29F3DD400093E4D4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E14BE75129F3DD410093E4D4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,9 +303,9 @@
 				INFOPLIST_FILE = TinkofItsSulutionCup/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,9 +331,9 @@
 				INFOPLIST_FILE = TinkofItsSulutionCup/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,7 +350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E14BE73E29F3DD400093E4D4 /* Build configuration list for PBXProject "TinkofItsSulutionCup" */ = {
+		E14BE73E29F3DD400093E4D4 /* Build configuration list for PBXProject "TinkoffItsSolutionCup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E14BE75529F3DD410093E4D4 /* Debug */,
@@ -348,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E14BE75729F3DD410093E4D4 /* Build configuration list for PBXNativeTarget "TinkofItsSulutionCup" */ = {
+		E14BE75729F3DD410093E4D4 /* Build configuration list for PBXNativeTarget "TinkoffItsSolutionCup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E14BE75829F3DD410093E4D4 /* Debug */,
@@ -358,6 +369,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1A2B60029F3E1CC00AE6052 /* TinkoffItsPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TinkoffItsPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E14BE73B29F3DD400093E4D4 /* Project object */;
 }
